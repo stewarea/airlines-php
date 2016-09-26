@@ -1,0 +1,23 @@
+
+<html>
+<head>
+    <title>{{city.getName}}</title>
+</head>
+<body>
+    <h1>Arrivals</h1>
+
+    {% if flights is not empty %}
+        {% for flight in flights %}
+            <li> {{ flight.getId }}</li
+        {% endfor %}
+    {% endif %}
+
+
+    <form action="/" method="post">
+        <label for='new_city'>City Name</label>
+        <input id='new_city' name='new_city' type='text'>
+        <button type='submit'>Add city</button>
+    </form>
+    <a href="/flights">See all flights</a>
+</body>
+</html>

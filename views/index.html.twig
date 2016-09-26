@@ -1,0 +1,27 @@
+
+<html>
+<head>
+    <title>To Do List</title>
+</head>
+<body>
+    <h1>Welcome to To Flight Library</h1>
+
+    <form action='/cities' method="post">
+        <label for="city_id">Select a city to see associated flights:</label>
+        <select id='city_id' name='city_id' type='text'>
+            {% if cities is not empty %}
+                {% for city in cities %}
+                    <option value="{{ city.getId }}"> {{ city.getName }} </option>
+                {% endfor %}
+            {% endif %}
+        </select>
+        <button type='submit'>Select City</button>
+    </form>
+    <form action="/" method="post">
+        <label for='new_city'>City Name</label>
+        <input id='new_city' name='new_city' type='text'>
+        <button type='submit'>Add city</button>
+    </form>
+    <a href="/flights">See all flights</a>
+</body>
+</html>
